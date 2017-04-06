@@ -1,0 +1,10 @@
+--- a/libopkg/pkg.c	2015-09-26 20:45:51.820124636 +0200
++++ b/libopkg/pkg.c	2015-09-26 20:47:49.272122623 +0200
+@@ -704,6 +704,7 @@
+             if (pkg->provides_count > 1) {
+                 fprintf(fp, "Provides:");
+                 for (i = 1; i < pkg->provides_count; i++) {
++                    if (!pkg->provides[i]) break;
+                     fprintf(fp, "%s %s", i == 1 ? "" : ",",
+                             pkg->provides[i]->name);
+                 }

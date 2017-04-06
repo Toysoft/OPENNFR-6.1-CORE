@@ -1,0 +1,17 @@
+rootfs               /                    auto       defaults              1  1
+proc                 /proc                proc       defaults              0  0
+devpts               /dev/pts             devpts     mode=0620,gid=5       0  0
+usbdevfs             /proc/bus/usb        usbdevfs   noauto                0  0
+tmpfs                /var/volatile        tmpfs      defaults              0  0
+usbfs                /proc/bus/usb        usbfs      defaults              0  0
+UUID=0a040970-6983-4865-9c28-e32e576924b0	/media/hdd	auto	defaults	1	1
+UUID=178b4268-ee9e-4b98-90c7-70b3360be32e	/media/hdd	auto	defaults	1	1
+UUID=a4b57300-01	/media/usb	auto	defaults	1	1
+UUID=e735a759-552b-4244-8a88-fdea427ebea9	/media/hdd	auto	defaults	1	1
+UUID=3459AE186782AB2F	/media/hdd	auto	defaults	1	1
+UUID=2cd664dd-603d-474a-9235-d040417ddbd6	/media/hdd	auto	defaults	1	1
+UUID=811a305c-ace5-419e-8e30-9820b3fa3dd0	/media/hdd	auto	defaults	1	1
+UUID=8343-AC67	/media/usb	auto	defaults	1	1
+UUID=8FBC-F64B	/media/usb1	auto	defaults	1	1
+UUID=514aaed0-ba88-40d9-b78e-01547cbf5501	/media/hdd	auto	defaults	1	1
+UUID=9810204a-929d-494e-9aa4-d26da5fa411d	/media/hdd	auto	defaults	1	1

@@ -1,0 +1,6 @@
+KV = "4.10.0"
+SRCDATE = "20170315"
+
+require ax-dvb-modules.inc
+SRC_URI[md5sum] = "4b4cbb477bf12c130b51133908da88ef"
+SRC_URI[sha256sum] = "c3897980d4e918508f3b4c009578859b65a53d3f939f420899d44ee88472e551"

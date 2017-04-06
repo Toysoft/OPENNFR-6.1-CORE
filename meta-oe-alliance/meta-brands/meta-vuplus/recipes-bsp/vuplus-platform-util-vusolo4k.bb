@@ -1,0 +1,8 @@
+SRCDATE = "20170123"
+SRCDATE_PR = "r0"
+PV="15.2"
+
+require vuplus-platform-util.inc
+
+SRC_URI[md5sum] = "b43622ee9537c9735b1630de7107eef1"
+SRC_URI[sha256sum] = "2fda2780ae5cbd8f588421929494487642ffc7c471e7046369a66625e1237c24"
