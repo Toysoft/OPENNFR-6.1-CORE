@@ -48,9 +48,6 @@ RDEPENDS_${PN} = "\
     enigma2-plugin-extensions-openwebif-themes \
     enigma2-plugin-extensions-openwebif-webtv \
     enigma2-plugin-extensions-openwebif-vxg \
-    exteplayer3 \
-    gstplayer \
-    ffmpeg \
     enigma2-plugin-systemplugins-serviceapp \       
     bash \
     ${@bb.utils.contains("MACHINE_FEATURES", "dreamboxv1", "", "ofgwrite", d)} \
