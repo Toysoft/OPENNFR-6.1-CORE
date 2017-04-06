@@ -230,6 +230,13 @@ MACHINEBUILD=revo4k
 else ifeq ($(MACHINEBUILD),tmtwin4k)
 MACHINE=dags7252
 MACHINEBUILD=tmtwin4k
+else ifeq ($(MACHINEBUILD),galaxy4k)
+MACHINE=dags7252
+MACHINEBUILD=galaxy4k
+else ifeq ($(MACHINEBUILD),tm4ksuper)
+MACHINE=dags7252
+MACHINEBUILD=tm4ksuper
+
 
 else ifeq ($(MACHINEBUILD),classm)
 MACHINE=odinm7
@@ -662,6 +669,9 @@ MACHINEBUILD=mbtwinplus
 else ifeq ($(MACHINEBUILD),sf3038)
 MACHINE=g300
 MACHINEBUILD=sf3038
+else ifeq ($(MACHINEBUILD),alphatriple)
+MACHINE=g300
+MACHINEBUILD=alphatriple
 else ifeq ($(MACHINEBUILD),sf128)
 MACHINE=g100
 MACHINEBUILD=sf128
