@@ -37,7 +37,7 @@ RDEPENDS_${PN} = "\
     dvbsnoop \
     librtmp \
     rtmpdump \
-    iperf \
+    iperf3 \
     mjpegtools \
     packagegroup-base-smbfs-client \
     packagegroup-base-smbfs-server \
