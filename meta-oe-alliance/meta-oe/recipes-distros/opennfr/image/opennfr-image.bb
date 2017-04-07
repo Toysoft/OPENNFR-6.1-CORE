@@ -115,8 +115,7 @@ image_preprocess() {
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/ 
 			        mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips
-			fi	
+				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips	
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/bin
@@ -127,8 +126,7 @@ image_preprocess() {
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unrar-free.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unrar-free.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz	
-			fi	
+				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz		
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
@@ -137,8 +135,7 @@ image_preprocess() {
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/nfr4xbm.tar.gz
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/fbclear.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz
-			fi	
+				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz	
 			cd $curdir
 			
 	
