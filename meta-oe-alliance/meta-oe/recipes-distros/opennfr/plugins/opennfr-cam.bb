@@ -13,6 +13,11 @@ FILES_${PN} = "/var* /usr/bin/* /usr/lib/python2.7/* /usr/lib/python2.7/site-pac
 S = "${WORKDIR}"
 
 do_install() {
+    install -d ${D}/usr/lib/enigma2/python/Components/Converter
+    for f in bitratecalc.so-mips.tar.gz
+    do
+        install -m 755 ${f} ${D}/usr/lib/enigma2/python/Components/Converter/${f}
+    done
 	    
     install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data
     for f in unrar-free.tar.gz unzip.tar.gz
