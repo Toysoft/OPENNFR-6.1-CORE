@@ -66,18 +66,6 @@ image_preprocess() {
 			cd $curdir
 
 
-			if [ "${BRAND_OEM}" = "ini" ]; then
-				cd ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4			
-				rm -rf ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4/rc.png		
-				mv ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4/rc-neu.png ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4/rc.png			
-				rm -rf ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4/rc-neu.png
-			else
-				cd ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models
-				rm -rf ${IMAGE_ROOTFS}/usr/share/enigma2/rc_models/ini4
-			fi
-			cd $curdir
-
-
 			# cd ${IMAGE_ROOTFS}/var/lib/opkg/lists
 			# rm -rf ${IMAGE_ROOTFS}/var/lib/opkg/lists/oe
 			# rm -rf ${IMAGE_ROOTFS}/var/lib/opkg/lists/oe-3rdparty
@@ -115,13 +103,6 @@ image_preprocess() {
 			rm -rf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz
 			cd $curdir
 
-			cd ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web
-			rm -rf ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web/client.pyo
-			rm -rf ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web/client.py
-			mv ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web/client-neu.py ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web/client.py
-			rm -rf ${IMAGE_ROOTFS}/usr/lib/python2.7/site-packages/twisted/web/client-neu.py
-			cd $curdir
-
 			cd ${IMAGE_ROOTFS}/var
 			mkdir ${IMAGE_ROOTFS}/var/volatile/run
 			cp ${IMAGE_ROOTFS}/var/smbd.pid ${IMAGE_ROOTFS}/var/volatile/run/smbd.pid
@@ -131,43 +112,26 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter
-			if [ "${BRAND_OEM}" = "fulan" ]; then
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-sh4.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/
-			        mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-sh4 ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-sh4.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-sh4		
-			else
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/ 
 			        mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-sh4.tar.gz
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips
 			fi	
 			cd $curdir
 
+			cd ${IMAGE_ROOTFS}/usr/bin
+			cp ${IMAGE_ROOTFS}/usr/bin/iperf3 ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
+			cd $curdir
+
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data
-			if [ "${BRAND_OEM}" = "fulan" ]; then
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/iperf.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unrar-free.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz			
-			else
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/iperf.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unrar-free.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/iperf.tar.gz
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unrar-free.tar.gz
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz	
 			fi	
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
-			if [ "${BRAND_OEM}" = "fulan" ]; then
-				touch ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/sh4_1.txt
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/nfr4xbm.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/fbclear.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader
-			else
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/nfr4xbm.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/fbclear.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
 				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs

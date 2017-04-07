@@ -17,22 +17,13 @@ RRECOMMENDS_${PN} = "\
     	libbluray \
     	libudfread \
    	dvblast \
-	astra-sm \
 	oe-alliance-skins \
 	enigma2-display-skins \
 	openatv-picons-meta \
 	enigma2-skins \
 	enigma2-pliplugins \
-	enigma2-plugin-extensions-project-valerie \
     	enigma2-plugin-extensions-epgimport \
 	librtmp \
-	enigma2-plugin-extensions-enhancedmoviecenter \
-	enigma2-plugin-extensions-cooltvguide \
-	enigma2-plugin-extensions-bmediacenter \
-	enigma2-plugin-extensions-mainmenu2 \	
-	enigma2-plugin-skins-skallihd-fullhd \	
-	enigma2-plugin-extensions-sdgradio \
-	enigma2-plugin-extensions-vmc \
 "
 
 RRECOMMENDS_${PN}_append_gb800solo = "enigma2-plugin-extensions-gbipboxclient"
