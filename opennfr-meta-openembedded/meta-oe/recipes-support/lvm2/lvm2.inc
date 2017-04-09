@@ -12,6 +12,7 @@ SRC_URI = "ftp://sources.redhat.com/pub/lvm2/old/LVM2.${PV}.tgz \
            file://0002-Guard-use-of-mallinfo-with-__GLIBC__.patch \
            file://0003-include-fcntl.h-for-O_-defines-and-fcntl-signature.patch \
            file://0004-tweak-MODPROBE_CMD-for-cross-compile.patch \
+           file://0001-Avoid-bashisms-in-init-scripts.patch \
            "
 S = "${WORKDIR}/LVM2.${PV}"
 
@@ -83,14 +84,17 @@ SYSTEMD_AUTO_ENABLE = "disable"
 
 TARGET_CC_ARCH += "${LDFLAGS}"
 
-FILES_${PN} += "${libdir}/device-mapper/*.so ${nonarch_base_libdir}/udev"
+FILES_${PN} += "${libdir}/device-mapper/*.so"
 FILES_${PN}-scripts = " \
     ${sbindir}/blkdeactivate \
     ${sbindir}/fsadm \
     ${sbindir}/lvmconf \
     ${sbindir}/lvmdump \
 "
-FILES_libdevmapper = "${libdir}/libdevmapper.so.*"
+# Specified explicitly for the udev rules, just in case that it does not get picked
+# up automatically:
+RDEPENDS_${PN}_append_class-target = " libdevmapper"
+FILES_libdevmapper = "${sbindir}/dmsetup ${libdir}/libdevmapper.so.* ${nonarch_base_libdir}/udev/rules.d"
 FILES_libdevmapper-dev = " \
     ${libdir}/libdevmapper.so \
     ${libdir}/pkgconfig/devmapper.pc \
@@ -98,8 +102,7 @@ FILES_libdevmapper-dev = " \
 "
 
 RDEPENDS_${PN}-scripts = "${PN} (= ${EXTENDPKGV}) bash"
-RDEPENDS_${PN} = " bash"
 RDEPENDS_libdevmapper-dev = "libdevmapper (= ${EXTENDPKGV})"
-RRECOMMENDS_${PN} = "${PN}-scripts (= ${EXTENDPKGV})"
+RRECOMMENDS_${PN}_class-target = "${PN}-scripts (= ${EXTENDPKGV})"
 
 CONFFILES_${PN} += "${sysconfdir}/lvm/lvm.conf"

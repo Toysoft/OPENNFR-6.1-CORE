@@ -363,14 +363,14 @@ class Tinfoil:
         skipped.
         """
         best = self.find_best_provider(pn)
-        if not best:
+        if not best or (len(best) > 3 and not best[3]):
             skiplist = self.get_skipped_recipes()
             taskdata = bb.taskdata.TaskData(None, skiplist=skiplist)
             skipreasons = taskdata.get_reasons(pn)
             if skipreasons:
-                raise bb.providers.NoProvider(skipreasons)
+                raise bb.providers.NoProvider('%s is unavailable:\n  %s' % (pn, '  \n'.join(skipreasons)))
             else:
-                raise bb.providers.NoProvider('Unable to find any recipe file matching %s' % pn)
+                raise bb.providers.NoProvider('Unable to find any recipe file matching "%s"' % pn)
         return best[3]
 
     def get_file_appends(self, fn):

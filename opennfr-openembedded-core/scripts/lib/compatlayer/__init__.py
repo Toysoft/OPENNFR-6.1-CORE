@@ -112,6 +112,7 @@ def detect_layers(layer_directories, no_auto):
     layers = []
 
     for directory in layer_directories:
+        directory = os.path.realpath(directory)
         if directory[-1] == '/':
             directory = directory[0:-1]
 
@@ -139,13 +140,10 @@ def _find_layer_depends(depend, layers):
                 return layer
     return None
 
-def add_layer(bblayersconf, layer, layers, logger):
-    logger.info('Adding layer %s' % layer['name'])
-
-    for collection in layer['collections']:
-        depends = layer['collections'][collection]['depends']
-        if not depends:
-            continue
+def add_layer_dependencies(bblayersconf, layer, layers, logger):
+    def recurse_dependencies(depends, layer, layers, logger, ret = []):
+        logger.debug('Processing dependencies %s for layer %s.' % \
+                    (depends, layer['name']))
 
         for depend in depends.split():
             # core (oe-core) is suppose to be provided
@@ -156,12 +154,46 @@ def add_layer(bblayersconf, layer, layers, logger):
             if not layer_depend:
                 logger.error('Layer %s depends on %s and isn\'t found.' % \
                         (layer['name'], depend))
-                return False
+                ret = None
+                continue
 
+            # We keep processing, even if ret is None, this allows us to report
+            # multiple errors at once
+            if ret is not None and layer_depend not in ret:
+                ret.append(layer_depend)
+
+            # Recursively process...
+            if 'collections' not in layer_depend:
+                continue
+
+            for collection in layer_depend['collections']:
+                collect_deps = layer_depend['collections'][collection]['depends']
+                if not collect_deps:
+                    continue
+                ret = recurse_dependencies(collect_deps, layer_depend, layers, logger, ret)
+
+        return ret
+
+    layer_depends = []
+    for collection in layer['collections']:
+        depends = layer['collections'][collection]['depends']
+        if not depends:
+            continue
+
+        layer_depends = recurse_dependencies(depends, layer, layers, logger, layer_depends)
+
+    # Note: [] (empty) is allowed, None is not!
+    if layer_depends is None:
+        return False
+    else:
+        for layer_depend in layer_depends:
             logger.info('Adding layer dependency %s' % layer_depend['name'])
             with open(bblayersconf, 'a+') as f:
                 f.write("\nBBLAYERS += \"%s\"\n" % layer_depend['path'])
+    return True
 
+def add_layer(bblayersconf, layer, layers, logger):
+    logger.info('Adding layer %s' % layer['name'])
     with open(bblayersconf, 'a+') as f:
         f.write("\nBBLAYERS += \"%s\"\n" % layer['path'])
 

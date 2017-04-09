@@ -75,6 +75,10 @@ do_configure() {
 	# we pre-generate desired options and copy to source directory instead
 	cp ${WORKDIR}/net-tools-config.h    ${S}/config.h
 	cp ${WORKDIR}/net-tools-config.make ${S}/config.make
+
+	if [ "${USE_NLS}" = "no" ]; then
+		sed -i -e 's/^I18N=1/# I18N=1/' ${S}/config.make
+	fi
 }
 
 do_compile() {
@@ -125,3 +129,4 @@ python __anonymous() {
 }
 ALTERNATIVE_PRIORITY = "100"
 
+BBCLASSEXTEND = "native nativesdk"
