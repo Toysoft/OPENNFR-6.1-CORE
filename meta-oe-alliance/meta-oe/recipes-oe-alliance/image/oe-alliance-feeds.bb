@@ -73,7 +73,6 @@ RDEPENDS_${PN} = " \
     livestreamer \
     livestreamersrv \
     llmnr-query \
-    mc \
     minidlna \
     mpd \
     mtd-utils \
