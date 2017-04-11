@@ -32,6 +32,7 @@ SRC_URI += "http://archiv.openmips.com/gigablue-linux-${PV}-mips-20170302.tgz \
     file://0001-STV-Add-SNR-Signal-report-parameters.patch \
     file://blindscan2.patch \
     file://0001-stv090x-optimized-TS-sync-control.patch \
+    file://kernel-add-support-for-gcc6.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"
