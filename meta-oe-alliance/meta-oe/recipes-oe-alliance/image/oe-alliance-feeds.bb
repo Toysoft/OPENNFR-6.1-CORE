@@ -70,6 +70,7 @@ RDEPENDS_${PN} = " \
     inadyn-mt \
     iperf3 \
     joe \
+    lighttpd \
     livestreamer \
     livestreamersrv \
     llmnr-query \

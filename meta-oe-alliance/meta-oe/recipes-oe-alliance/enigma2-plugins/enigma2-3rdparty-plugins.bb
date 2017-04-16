@@ -40,7 +40,7 @@ THIRDPARTY_PLUGINS = " \
     enigma2-plugin-extensions-digitalfernsehen_1.2rc1_all.ipk \
     enigma2-plugin-extensions-dvrproviderplayer_1.14_all.ipk \
     enigma2-plugin-extensions-ehue_0.2-r0_all.ipk \
-    enigma2-plugin-extensions-enigmalight_0.2-rc1_all.ipk \
+    enigma2-plugin-extensions-enigmalight_0.2-rc2_all.ipk \
     enigma2-plugin-extensions-facebook_1.4_mips32el.ipk \
     enigma2-plugin-extensions-filesearchfs_2.53_all.ipk \
     enigma2-plugin-extensions-focusonline_1.1rc1_all.ipk \
