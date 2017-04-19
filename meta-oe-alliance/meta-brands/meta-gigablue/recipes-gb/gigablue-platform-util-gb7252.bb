@@ -1,6 +1,6 @@
 require gigablue-platform-util.inc
 
-SRCDATE = "20170407"
+SRCDATE = "20170418"
 
-SRC_URI[md5sum] = "83f5a80bf36318c731f7866e4870639b"
-SRC_URI[sha256sum] = "67c40b580b55241c7cf6b75d893d6495ff4a1e906efde2514b1ba4a837289c13"
+SRC_URI[md5sum] = "ed2d3ea0e59b6ad58ddbdd3851e7b7a5"
+SRC_URI[sha256sum] = "ddfd0e7dd7998d2333a231ab3b43af889350e08b432ca5d00375d2b1b01f99b1"
