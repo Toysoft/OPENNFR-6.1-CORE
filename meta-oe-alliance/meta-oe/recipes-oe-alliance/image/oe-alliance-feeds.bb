@@ -82,6 +82,7 @@ RDEPENDS_${PN} = " \
     net-snmp \
     ntfs-3g \
     ntp \
+    nodejs \
     odhcp6c \
     ofgwrite \
     openresolv \
