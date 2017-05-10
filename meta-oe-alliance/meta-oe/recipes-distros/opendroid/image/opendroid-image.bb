@@ -1,16 +1,17 @@
 SUMMARY = "openDroid Image"
+MAINTAINER = "OpenDroid Team"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "proprietary"
-MAINTAINER = "OpenDroid Team"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 require conf/license/license-gplv2.inc
 
-PV = "${IMAGE_VERSION}"
-PR = "${BUILD_VERSION}"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+PR_NUM = "${@bb.utils.contains("DISTRO_TYPE", "release", "${BUILD_VERSION}.000", "${BUILD_VERSION}.${DEVELOPER_BUILD_VERSION}", d)}"
 
-do_rootfs[deptask] = "do_rm_work"
+PV = "${IMAGE_VERSION}"
+PR = "r${PR_NUM}"
+
 
 IMAGE_INSTALL = "opendroid-base \
     ${@bb.utils.contains("MACHINE_FEATURES", "singlecore", "", \
