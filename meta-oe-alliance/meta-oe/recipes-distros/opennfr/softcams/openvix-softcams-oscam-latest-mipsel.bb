@@ -29,8 +29,8 @@ EXTRA_OECMAKE += "\
     -DHAVE_PCSC=0"
 
 do_install() {
-    install -d ${D}/usr/softcams
-    install -m 0755 ${WORKDIR}/build/oscam ${D}/usr/softcams/oscam-latest
+    install -d ${D}/usr/emu
+    install -m 0755 ${WORKDIR}/build/oscam ${D}/usr/emu/oscam-latest
 }
 
 FILES_enigma2-plugin-softcams-oscam-latest = "/usr"
