@@ -24,7 +24,6 @@ RRECOMMENDS_${PN} = "\
 	enigma2-pliplugins \
     	enigma2-plugin-extensions-epgimport \
 	librtmp \
-        openvix-softcams-meta \
 "
 
 RRECOMMENDS_${PN}_append_gb800solo = "enigma2-plugin-extensions-gbipboxclient"
