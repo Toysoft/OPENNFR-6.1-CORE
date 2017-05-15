@@ -51,6 +51,7 @@ RDEPENDS_${PN} = "\
     enigma2-plugin-extensions-openwebif-vxg \ 
     enigma2-plugin-extensions-serviceapp \
     exteplayer3 \
+    ffmpeg \    
     uchardet \  
     bash \
     ${@bb.utils.contains("MACHINE_FEATURES", "dreamboxv1", "", "ofgwrite", d)} \
