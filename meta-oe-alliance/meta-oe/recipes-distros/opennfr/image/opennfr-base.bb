@@ -49,7 +49,7 @@ RDEPENDS_${PN} = "\
     enigma2-plugin-extensions-openwebif-themes \
     enigma2-plugin-extensions-openwebif-webtv \
     enigma2-plugin-extensions-openwebif-vxg \ 
-    enigma2-plugin-extensions-serviceapp \
+    enigma2-plugin-systemplugins-serviceapp \
     exteplayer3 \
     ffmpeg \    
     uchardet \  
