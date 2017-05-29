@@ -35,10 +35,8 @@ IMAGE_CMD_tar_prepend = "\
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf gigablue; \
-    cp ${DEPLOY_DIR_IMAGE}/*.zip /home/harry/OPENNFR6.0/image-zips/; \ 
 "
 
 EXTRA_IMAGEDEPENDS = "\
     gigablue-initrd-cfe-${MACHINE_DRIVER} \
-    enigma2-plugin-systemplugins-remotecontrolcode \
 "
