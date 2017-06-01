@@ -33,6 +33,7 @@ IMAGE_CMD_ubi_append = "\
     echo "rename this file to 'force' to force an update without confirmation" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/noforce; \
     cd ${DEPLOY_DIR_IMAGE}; \
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
+    cp ${DEPLOY_DIR_IMAGE}/*.zip /home/harry/OPENNFR6.0/image-zips/; \  
     rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
