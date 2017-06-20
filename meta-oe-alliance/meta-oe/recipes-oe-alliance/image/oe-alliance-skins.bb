@@ -19,7 +19,6 @@ RDEPENDS_${PN} = "\
 	enigma2-plugin-skins-novum-hd-slim \
 	enigma2-plugin-skins-novum-fhd-light \
 	enigma2-plugin-skins-army-moodblue-hd \
-	enigma2-plugin-skins-kravenhd \
 	enigma2-plugin-skins-kravenfhd \
 	enigma2-plugin-skins-kravenvb \
 	enigma2-plugin-skins-sevenhd \
