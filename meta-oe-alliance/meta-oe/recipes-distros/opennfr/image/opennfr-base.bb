@@ -42,7 +42,6 @@ RDEPENDS_${PN} = "\
     iperf3 \
     packagegroup-base-smbfs-client \
     packagegroup-base-smbfs-server \
-    packagegroup-base-smbfs-utils \
     packagegroup-base-nfs \
     enigma2-plugin-drivers-usbserial \
     enigma2-plugin-extensions-openwebif-terminal \
