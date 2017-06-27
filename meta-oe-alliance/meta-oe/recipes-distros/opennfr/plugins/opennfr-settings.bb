@@ -14,7 +14,7 @@ S = "${WORKDIR}"
 
 do_install() {
     install -d ${D}/etc/enigma2
-    for f in mp_pluginliste bouquets* userbouquet* autotimer.xml cert.pem key.pem lamedb lamedb5 menusort.xml pluginsort.xml settings lcndb epgimport.conf blacklist whitelist
+    for f in mp_pluginliste bouquets* userbouquet* autotimer.xml cert.pem key.pem lamedb lamedb5 menusort.xml subservices.xml pluginsort.xml settings lcndb epgimport.conf blacklist whitelist
     do
         install -m 644 ${f} ${D}/etc/enigma2/${f}
     done
