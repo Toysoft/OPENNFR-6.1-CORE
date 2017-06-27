@@ -100,6 +100,9 @@ do_install_append_gb7362() {
     install -m 0644 ${S}/gbultraue/lcdwarning220.bin ${D}/usr/share/lcdwarning.bin
     install -m 0644 ${S}/gbultraue/lcdcomplete220.bin ${D}/usr/share/lcdcomplete.bin
     install -m 0644 ${S}/gbultraue/lcdsplash220.bin ${DEPLOY_DIR_IMAGE}/lcdsplash220.bin    
+    install -m 0644 ${S}/gbultraue/lcdwaitkey220.bin ${DEPLOY_DIR_IMAGE}/lcdwaitkey220.bin  
+    install -m 0644 ${S}/gbultraue/lcdwarning220.bin ${DEPLOY_DIR_IMAGE}/lcdwarning220.bin  
+    install -m 0644 ${S}/gbultraue/lcdcomplete220.bin ${DEPLOY_DIR_IMAGE}/lcdcomplete220.bin 
 }
 
 do_install_append_gb73625() {
