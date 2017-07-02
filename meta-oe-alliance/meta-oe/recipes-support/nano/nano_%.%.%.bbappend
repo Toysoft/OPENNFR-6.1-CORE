@@ -1,5 +1,3 @@
-PR_append = ".0"
-
 inherit update-alternatives
 
 EXTRA_OECONF_prepend="--bindir=/bin --disable-wrapping-as-root"
