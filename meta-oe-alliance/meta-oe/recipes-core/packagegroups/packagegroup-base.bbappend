@@ -4,7 +4,6 @@ PACKAGES += " \
             ${@bb.utils.contains("DISTRO_FEATURES", "appletalk", "packagegroup-base-appletalk", "", d)} \
             ${@bb.utils.contains("DISTRO_FEATURES", "smbfs", "packagegroup-base-smbfs-client", "", d)} \
             ${@bb.utils.contains("DISTRO_FEATURES", "smbfs", "packagegroup-base-smbfs-server", "", d)} \
-            ${@bb.utils.contains("DISTRO_FEATURES", "smbfs", "packagegroup-base-smbfs-utils", "", d)} \
             ${@bb.utils.contains("DISTRO_FEATURES", "smbfs", "packagegroup-base-samba", "", d)} \
             "
 
@@ -33,7 +32,6 @@ RRECOMMENDS_packagegroup-base-samba = "\
     packagegroup-base-smbfs-client \
     packagegroup-base-smbfs-server \
     packagegroup-base-smbfs-utils \
-    samba-advanced \
     "
 
 RRECOMMENDS_packagegroup-base-appletalk = "\
