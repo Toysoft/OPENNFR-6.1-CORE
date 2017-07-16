@@ -23,15 +23,10 @@ RDEPENDS_packagegroup-base-smbfs-server = "\
     samba-base \
     "
 
-RDEPENDS_packagegroup-base-smbfs-utils = "\
-    samba \
-    "
-
 RRECOMMENDS_packagegroup-base-samba = "\
     packagegroup-base-smbfs \
     packagegroup-base-smbfs-client \
     packagegroup-base-smbfs-server \
-    packagegroup-base-smbfs-utils \
     "
 
 RRECOMMENDS_packagegroup-base-appletalk = "\
