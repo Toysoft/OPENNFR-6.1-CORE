@@ -19,8 +19,7 @@ PROVIDES += " \
     enigma2-plugin-extensions-btdevicesmanager \
     enigma2-plugin-systemplugins-blindscan \
     enigma2-plugin-systemplugins-channelsimporter \
-
-enigma2-plugin-extensions-dlnabrowser \
+    enigma2-plugin-extensions-dlnabrowser \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-systemplugins-dsayerscustommiximporter \
     enigma2-plugin-systemplugins-firmwareupgrade \
