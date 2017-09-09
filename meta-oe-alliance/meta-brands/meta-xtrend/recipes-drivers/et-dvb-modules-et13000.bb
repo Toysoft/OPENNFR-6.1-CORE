@@ -8,10 +8,10 @@ PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
 KV = "4.9.9"
-SRCDATE = "20170724"
+SRCDATE = "20170906"
 
-SRC_URI[md5sum] = "491685244e65afc729aa5c81f3e09f7a"
-SRC_URI[sha256sum] = "805933713eae24b985dfafb64cfb526e1c2a275bf883873c9f49d91d6a65204d"
+SRC_URI[md5sum] = "89b99c24197b5e4547e1a9eda40ef046"
+SRC_URI[sha256sum] = "3c9c0a7653109effd3b1ad779416dd9a883450f167bd703b39e7bc4c653e5f0f"
 
 SRC_URI = "http://source.mynonpublic.com/xtrend/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 

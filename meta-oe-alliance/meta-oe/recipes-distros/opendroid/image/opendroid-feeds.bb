@@ -6,14 +6,15 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d
 ALLOW_EMPTY_${PN} = "1"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PV = "6.2"
-PR = "r11"
+PV = "6.4"
+PR = "r14"
 
 inherit packagegroup
 
 RRECOMMENDS_${PN} = "\
     oe-alliance-skins \
     enigma2-skins \
+    enigma2-display-skins \
     cdfs \
     enigma2-plugin-extensions-epgimport \
     enigma2-plugin-extensions-vhannibal-autosettings \
