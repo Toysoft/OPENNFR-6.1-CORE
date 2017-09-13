@@ -71,7 +71,7 @@ FILES_${BPN}-common   += "${sysconfdir}/pam.d/samba"
 
 CONFFILES_${BPN}-common = "${sysconfdir}/pam.d/samba ${sysconfdir}/samba/smb.conf ${sysconfdir}/samba/private/users.map ${sysconfdir}/samba/private/smbpasswd"
 
-RRECOMMENDS_${PN}-base+= "pam-smbpass wsdd"
+RRECOMMENDS_${PN}-base+= "wsdd"
 
 
 pkg_postinst_${BPN}-common_prepend() {
