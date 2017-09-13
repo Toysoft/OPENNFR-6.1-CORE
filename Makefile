@@ -31,6 +31,7 @@ BBLAYERS ?= \
 	$(CURDIR)/opennfr-meta-openembedded/meta-webserver \
 	$(CURDIR)/meta-oe-alliance/meta-oe \
 	$(CURDIR)/meta-qt5 \
+	$(CURDIR)/meta-go \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-airdigital \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-azbox \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ax \
@@ -57,7 +58,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-tripledot \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ultramini \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-vuplus \
-    	$(CURDIR)/meta-oe-alliance/meta-brands/meta-wetek \
+	$(CURDIR)/meta-oe-alliance/meta-brands/meta-wetek \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-xp \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-xtrend \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-xcore \
@@ -536,9 +537,12 @@ MACHINEBUILD=dynaspark7162
 else ifeq ($(MACHINEBUILD),sf98)
 MACHINE=yh7362
 MACHINEBUILD=sf98
-else ifeq ($(MACHINEBUILD),evopanda)
+else ifeq ($(MACHINEBUILD),evoslimse)
 MACHINE=yh7362
-MACHINEBUILD=evopanda
+MACHINEBUILD=evoslimse
+else ifeq ($(MACHINEBUILD),evoslimt2c)
+MACHINE=yh62tc
+MACHINEBUILD=evoslimt2c
 else ifeq ($(MACHINEBUILD),t2cable)
 MACHINE=jj7362
 MACHINEBUILD=t2cable
@@ -612,6 +616,9 @@ MACHINEBUILD=novatwin
 else ifeq ($(MACHINEBUILD),zgemmah3ac)
 MACHINE=h3
 MACHINEBUILD=zgemmah3ac
+else ifeq ($(MACHINEBUILD),zgemmah4)
+MACHINE=h4
+MACHINEBUILD=zgemmah4
 else ifeq ($(MACHINEBUILD),zgemmah5ac)
 MACHINE=h5
 MACHINEBUILD=zgemmah5ac
@@ -671,6 +678,9 @@ MACHINEBUILD=sf238
 else ifeq ($(MACHINEBUILD),twinboxlcdci5)
 MACHINE=7105s
 MACHINEBUILD=twinboxlcdci5
+else ifeq ($(MACHINEBUILD),bcm7252)
+MACHINE=8100s
+MACHINEBUILD=bcm7252
 
 
 else ifeq ($(MACHINEBUILD),mbtwinplus)
@@ -788,6 +798,9 @@ MACHINEBUILD=et7x00mini
 else ifeq ($(MACHINEBUILD),gi11000)
 MACHINE=et1x000
 MACHINEBUILD=gi11000
+else ifeq ($(MACHINEBUILD),beyonwizu4)
+MACHINE=et13000
+MACHINEBUILD=beyonwizu4
 
 endif
 
