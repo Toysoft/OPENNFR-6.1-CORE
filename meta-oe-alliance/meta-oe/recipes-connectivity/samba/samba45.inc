@@ -52,8 +52,8 @@ SRC_URI = "${SAMBA_MIRROR}/stable/samba-${PV}.tar.gz \
 # Including it would force us to allow "wide links", which opens a bigger security hole than the one which
 # we would close.
 
-SRC_URI[md5sum] = "76da2fa64edd94a0188531e7ecb27c4e"
-SRC_URI[sha256sum] = "8f2c8a7f2bd89b0dfd228ed917815852f7c625b2bc0936304ac3ed63aaf83751"
+SRC_URI[md5sum] = "fb1d8e37f57099231ea2773e238b844e"
+SRC_URI[sha256sum] = "011d1a64afecd9e04f14581a6a2afd1f73c33fa1cdc5bfe3aa11c4752954731c"
 
 SAMBAMMAP = "no"
 SAMBAMMAP_libc-glibc = "yes"
