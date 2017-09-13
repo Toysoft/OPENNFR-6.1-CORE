@@ -1,4 +1,4 @@
-require samba36.inc
+require samba45.inc
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/samba-${PV}:"
 
