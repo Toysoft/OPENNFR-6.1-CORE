@@ -22,6 +22,7 @@ MACHINEBUILD = $(MACHINE)
 export MACHINEBUILD
 
 BBLAYERS ?= \
+	$(CURDIR)/meta-local \
 	$(CURDIR)/opennfr-meta-openembedded/meta-oe \
 	$(CURDIR)/opennfr-meta-openembedded/meta-multimedia \
 	$(CURDIR)/opennfr-meta-openembedded/meta-networking \
@@ -31,7 +32,6 @@ BBLAYERS ?= \
 	$(CURDIR)/opennfr-meta-openembedded/meta-webserver \
 	$(CURDIR)/meta-oe-alliance/meta-oe \
 	$(CURDIR)/meta-qt5 \
-	$(CURDIR)/meta-go \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-airdigital \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-azbox \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ax \
@@ -41,6 +41,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-dags \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-dream \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ebox \
+	$(CURDIR)/meta-oe-alliance/meta-brands/meta-edision \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-entwopia \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-formuler \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-fulan \
@@ -421,6 +422,15 @@ MACHINEBUILD=evomini
 else ifeq ($(MACHINEBUILD),evominiplus)
 MACHINE=ch625lc
 MACHINEBUILD=evominiplus
+else ifeq ($(MACHINEBUILD),vipert2c)
+MACHINE=yh625tc
+MACHINEBUILD=vipert2c
+else ifeq ($(MACHINEBUILD),vipercombo)
+MACHINE=yh625dt
+MACHINEBUILD=vipercombo
+else ifeq ($(MACHINEBUILD),vipercombohdd)
+MACHINE=ch625dt
+MACHINEBUILD=vipercombohdd
 
 
 else ifeq ($(MACHINEBUILD),mutant2400)
@@ -631,6 +641,9 @@ MACHINEBUILD=zgemmah2splus
 else ifeq ($(MACHINEBUILD),zgemmah7)
 MACHINE=h7
 MACHINEBUILD=zgemmah7
+else ifeq ($(MACHINEBUILD),zgemmah6)
+MACHINE=h6
+MACHINEBUILD=zgemmah6
 
 
 else ifeq ($(MACHINEBUILD),mbmicro)
