@@ -180,15 +180,12 @@ DESCRIPTION_append_enigma2-plugin-systemplugins-networkwizard = "provides easy s
 # Note that these tools lack recipes
 RDEPENDS_enigma2-plugin-extensions-dvdburn = "dvd+rw-tools dvdauthor mjpegtools cdrkit python-imaging ${DEMUXTOOL}"
 RDEPENDS_enigma2-plugin-systemplugins-hotplug = "hotplug-e2-helper"
-CONFFILES_enigma2-plugin-extensions-openxtareader = "/usr/lib/enigma2/python/Plugins/Extensions/OpenXtaReader/db/favoriten"
-RDEPENDS_enigma2-plugin-extensions-openxtareader = "python-lxml"
 RDEPENDS_enigma2-plugin-systemplugins-fsblupdater = "python-distutils"
 
 inherit autotools-brokensep gitpkgv pkgconfig pythonnative
 
 PV = "${IMAGE_VERSION}+git${SRCPV}"
 PKGV = "${IMAGE_VERSION}+git${GITPKGV}"
-PR = "r2"
 
 SRC_URI = "${ENIGMA2_URI}"
 
@@ -218,10 +215,6 @@ SRC_URI_append_vuduo = " \
     file://duo_VFD.patch \
     "
 
-SRC_URI_append_openatv = " \
-    file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
-    "
-
 SRC_URI_append_wetekplay2 = " \
     ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://0001-have-64-bit-action-long-int-update.patch", "", d)} \
     "
@@ -243,9 +236,6 @@ SRC_URI_append_opendroid = " \
     file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
     "
 SRC_URI_append_egami = " \
-    file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
-    "
-SRC_URI_append_openxta = " \
     file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
     "
 
@@ -278,6 +268,7 @@ EXTRA_OECONF = " \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "--with-colorlcd" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd128", "--with-colorlcd128" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd220", "--with-colorlcd220" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd390", "--with-colorlcd390" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd400", "--with-colorlcd400" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd480", "--with-colorlcd480" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd720", "--with-colorlcd720" , "", d)} \
@@ -344,7 +335,7 @@ do_install_append() {
     ln -s /usr/lib/enigma2/python/Components/PackageInfo.pyo ${D}/usr/lib/enigma2/python/Components/DreamboxInfoHandler.pyo
     install -d ${D}${sysconfdir}
     git --git-dir=${S}/.git log --since=10.weeks --pretty=format:"%s" > ${D}${sysconfdir}/e2-git.log
-    git --git-dir=${S}/.git log --since=10.weeks --pretty=format:"%s" > ${D}${sysconfdir}/oe-git.log
+    git --git-dir=${OE-ALLIANCE_BASE}/.git log --since=10.weeks --pretty=format:"%s" > ${D}${sysconfdir}/oe-git.log
 }
 
 python populate_packages_prepend() {
@@ -358,3 +349,7 @@ python populate_packages_prepend() {
     enigma2_podir = bb.data.expand('${datadir}/enigma2/po', d)
     do_split_packages(d, enigma2_podir, '^(\w+)/[a-zA-Z0-9_/]+.*$', 'enigma2-locale-%s', '%s', recursive=True, match_path=True, prepend=True, extra_depends="enigma2")
 }
+
+inherit binary-compress
+
+FILES_COMPRESS_openatv = "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${bindir}/enigma2", "", d)}"

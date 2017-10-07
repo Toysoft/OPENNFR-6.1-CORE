@@ -53,7 +53,10 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
     kernel-module-cdfs \
-    gstreamer1.0-plugin-dvbmediasink \    
+    "
+
+MACHINE_EXTRA_RRECOMMENDS = " \
+    ${@bb.utils.contains("GST_VERSION", "1.0", "gstreamer1.0-plugin-dvbmediasink", "gst-plugin-dvbmediasink", d)} \
     "
 
 include conf/machine/include/autoload-filesystems.inc
@@ -97,7 +100,7 @@ IMAGE_CMD_ubi_append = "\
     rm -f ${DEPLOY_DIR_IMAGE}/.ubifs; \
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
-    cp ${DEPLOY_DIR_IMAGE}/*.zip /home/harry/OPENNFR6.0/image-zips/; \    
+    cp ${DEPLOY_DIR_IMAGE}/*.zip /home/harry/OPENNFR6.0/image-zips/; \ 
     "
 
 MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec bootsplash omb feature1 feature2 blindscan-tbs"
