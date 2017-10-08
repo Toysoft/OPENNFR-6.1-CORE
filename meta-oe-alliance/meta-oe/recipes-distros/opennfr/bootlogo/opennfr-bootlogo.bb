@@ -89,8 +89,12 @@ do_install_append_gb800ueplus() {
 
 do_install_append_gbquadplus() {
     install -d ${D}/usr/share
-    install -m 0644 lcdwaitkey400.bin ${D}/usr/share/lcdwaitkey.bin
-    install -m 0644 lcdwarning400.bin ${D}/usr/share/lcdwarning.bin
+    install -m 0644 ${S}/gbquadplus/lcdwaitkey400.bin ${D}/usr/share/lcdwaitkey.bin
+    install -m 0644 ${S}/gbquadplus/lcdwarning400.bin ${D}/usr/share/lcdwarning.bin
+    install -m 0644 ${S}/gbquadplus/lcdsplash400.bin ${D}/usr/share/lcdwarning.bin
+    install -m 0644 ${S}/gbquadplus/lcdsplash400.bin ${DEPLOY_DIR_IMAGE}/lcdsplash400.bin 
+    install -m 0644 ${S}/gbquadplus/lcdwaitkey400.bin ${DEPLOY_DIR_IMAGE}/lcdwaitkey400.bin  
+    install -m 0644 ${S}/gbquadplus/lcdwarning400.bin ${DEPLOY_DIR_IMAGE}/lcdwarning400.bin  
 }
 
 do_install_append_gb7362() {
