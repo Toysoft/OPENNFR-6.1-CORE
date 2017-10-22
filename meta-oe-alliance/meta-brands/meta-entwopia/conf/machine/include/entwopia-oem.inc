@@ -128,7 +128,6 @@ IMAGE_CMD_ubi_append = "\
     rm -f ${DEPLOY_DIR_IMAGE}/.ubifs; \
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
-    cp ${DEPLOY_DIR_IMAGE}/*.zip /home/harry/OPENNFR6.0/image-zips/; \  
     "
 
 

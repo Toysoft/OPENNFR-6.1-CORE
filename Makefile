@@ -667,7 +667,7 @@ else ifeq ($(MACHINEBUILD),twinboxlcd)
 MACHINE=7100s
 MACHINEBUILD=twinboxlcd
 else ifeq ($(MACHINEBUILD),singleboxlcd)
-MACHINE=7200s
+MACHINE=7100s
 MACHINEBUILD=singleboxlcd
 else ifeq ($(MACHINEBUILD),sf208)
 MACHINE=7210s
@@ -696,9 +696,9 @@ MACHINEBUILD=sf238
 else ifeq ($(MACHINEBUILD),twinboxlcdci5)
 MACHINE=7105s
 MACHINEBUILD=twinboxlcdci5
-else ifeq ($(MACHINEBUILD),bcm7252)
+else ifeq ($(MACHINEBUILD),e4hdultra)
 MACHINE=8100s
-MACHINEBUILD=bcm7252
+MACHINEBUILD=e4hdultra
 
 
 else ifeq ($(MACHINEBUILD),mbtwinplus)
