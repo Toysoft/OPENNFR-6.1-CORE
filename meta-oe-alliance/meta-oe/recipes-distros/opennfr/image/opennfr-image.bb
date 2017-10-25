@@ -92,7 +92,7 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib
-			ln -s ${IMAGE_ROOTFS}/usr/lib/libbz2.so.1.0.6 ${IMAGE_ROOTFS}/usr/lib/libbz2.so.0.0.0 || true
+			ln -s libbz2.so.1.0.6 libbz2.so.0.0.0 || true
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/emu
