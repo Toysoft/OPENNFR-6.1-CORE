@@ -59,7 +59,6 @@ DEPENDS = "\
     minidlna \
     hddtemp \
     ppp \
-    udpxy \
     usbmodeswitch \
     usbmodeswitch-data \
     usbutils \
