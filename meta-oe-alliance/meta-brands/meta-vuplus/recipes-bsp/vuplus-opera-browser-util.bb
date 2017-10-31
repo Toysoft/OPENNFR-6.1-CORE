@@ -7,7 +7,7 @@ require conf/license/license-close.inc
 DEPENDS = "sshpass-native tslib mpfr gmp ${@bb.utils.contains("GST_VERSION", "1.0", "gstreamer1.0", "gstreamer", d)}"
 RDEPENDS_${PN} = "libsysfs2 libgmp10 libmpfr4 vuplus-opera-dumpait"
 
-SRC_DATE = "20151222_0"
+SRC_DATE = "20171018_0"
 SRC_URI = ""
 
 PR = "r46_${SRC_DATE}"
@@ -55,16 +55,16 @@ do_compile() {
 }
 
 do_install() {
-	if [[ -d ${S}/opera ]]; then
-    install -d ${D}/usr/local/hbb-browser
-    mv ${S}/opera/* ${D}/usr/local/hbb-browser/
-    install -d ${D}/usr/lib
-    mv ${S}/dfb/usr/lib/* ${D}/usr/lib/
-    mv ${D}/usr/local/hbb-browser/root/jsplugins/ooif-gst-${GSTVER}.so ${D}/usr/local/hbb-browser/root/jsplugins/ooif.so
-    rm -f ${D}/usr/local/hbb-browser/root/jsplugins/ooif-gst*.so
-    mv ${D}/usr/local/hbb-browser/root/video/videobackend-gst-${GSTVER}.so ${D}/usr/local/hbb-browser/root/video/videobackend.so
-    rm -f ${D}/usr/local/hbb-browser/root/video/videobackend-gst*.so
-	fi
+    if [[ -d ${S}/opera ]]; then
+        install -d ${D}/usr/local/hbb-browser
+        cp -rf ${S}/opera/* ${D}/usr/local/hbb-browser/
+        install -d ${D}/usr/lib
+        cp -rf ${S}/dfb/usr/lib/* ${D}/usr/lib/
+        mv ${D}/usr/local/hbb-browser/root/jsplugins/ooif-gst-${GSTVER}.so ${D}/usr/local/hbb-browser/root/jsplugins/ooif.so
+        rm -f ${D}/usr/local/hbb-browser/root/jsplugins/ooif-gst*.so
+        mv ${D}/usr/local/hbb-browser/root/video/videobackend-gst-${GSTVER}.so ${D}/usr/local/hbb-browser/root/video/videobackend.so
+        rm -f ${D}/usr/local/hbb-browser/root/video/videobackend-gst*.so
+    fi
 }
 
 package_do_shlibs_append() {
