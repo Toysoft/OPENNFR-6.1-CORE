@@ -35,7 +35,7 @@ SRC_URI_append_dags7362 = "file://splash1_power.bmp file://splash1_os1.bmp file:
 SRC_URI_append_dags7362 = "file://splash1_power.bmp file://splash1_os1.bmp file://splash1_os2.bmp file://splash2.bmp file://splash3.bmp"
 
 SRC_URI_append_gbultraue = "file://gbultraue/lcdsplash220.bin file://gbultraue/lcdwaitkey220.bin file://gbultraue/lcdwarning220.bin file://gbultraue/lcdcomplete220.bin"
-SRC_URI_append_gbx2 = "file://gbx2/lcdsplash220.bin file://gbx2/lcdwaitkey220.bin file://gbx2/lcdwarning220.bin file://gbx2/lcdcomplete220.bin"
+
 
 BINARY_VERSION = "1.3"
 
@@ -88,34 +88,16 @@ do_install_append_gb800ueplus() {
 }
 
 do_install_append_gbquadplus() {
-    install -d ${D}/usr/share
-    install -m 0644 ${S}/gbquadplus/lcdwaitkey400.bin ${D}/usr/share/lcdwaitkey.bin
-    install -m 0644 ${S}/gbquadplus/lcdwarning400.bin ${D}/usr/share/lcdwarning.bin
-    install -m 0644 ${S}/gbquadplus/lcdsplash400.bin ${D}/usr/share/lcdwarning.bin
     install -m 0644 ${S}/gbquadplus/lcdsplash400.bin ${DEPLOY_DIR_IMAGE}/lcdsplash400.bin 
     install -m 0644 ${S}/gbquadplus/lcdwaitkey400.bin ${DEPLOY_DIR_IMAGE}/lcdwaitkey400.bin  
     install -m 0644 ${S}/gbquadplus/lcdwarning400.bin ${DEPLOY_DIR_IMAGE}/lcdwarning400.bin  
 }
 
 do_install_append_gb7362() {
-    install -d ${D}/usr/share
-    install -m 0644 ${S}/gbultraue/lcdsplash220.bin ${D}/usr/share/lcdsplash.bin
-    install -m 0644 ${S}/gbultraue/lcdwaitkey220.bin ${D}/usr/share/lcdwaitkey.bin
-    install -m 0644 ${S}/gbultraue/lcdwarning220.bin ${D}/usr/share/lcdwarning.bin
-    install -m 0644 ${S}/gbultraue/lcdcomplete220.bin ${D}/usr/share/lcdcomplete.bin
     install -m 0644 ${S}/gbultraue/lcdsplash220.bin ${DEPLOY_DIR_IMAGE}/lcdsplash220.bin    
     install -m 0644 ${S}/gbultraue/lcdwaitkey220.bin ${DEPLOY_DIR_IMAGE}/lcdwaitkey220.bin  
     install -m 0644 ${S}/gbultraue/lcdwarning220.bin ${DEPLOY_DIR_IMAGE}/lcdwarning220.bin  
     install -m 0644 ${S}/gbultraue/lcdcomplete220.bin ${DEPLOY_DIR_IMAGE}/lcdcomplete220.bin 
-}
-
-do_install_append_gb73625() {
-    install -d ${D}/usr/share
-    install -m 0644 ${S}/gbx2/lcdsplash220.bin ${D}/usr/share/lcdsplash.bin
-    install -m 0644 ${S}/gbx2/lcdwaitkey220.bin ${D}/usr/share/lcdwaitkey.bin
-    install -m 0644 ${S}/gbx2/lcdwarning220.bin ${D}/usr/share/lcdwarning.bin
-    install -m 0644 ${S}/gbx2/lcdcomplete220.bin ${D}/usr/share/lcdcomplete.bin
-    install -m 0644 ${S}/gbx2/lcdsplash220.bin ${DEPLOY_DIR_IMAGE}/lcdsplash220.bin    
 }
 
 
