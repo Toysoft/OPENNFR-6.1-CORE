@@ -26,8 +26,21 @@ startup_progress() {
         progress=$progress_size
     fi
     #echo "PROGRESS is $progress $runlevel $first_step + ($step of $num_steps) $step_change $progress_size"
-    if [ $progress -gt 0 -a -e /dev/mcu ]; then
-        echo $(($progress / 2)) % > /dev/mcu
+    #if type psplash-write >/dev/null 2>&1; then
+    #    TMPDIR=/mnt/.psplash psplash-write "PROGRESS $progress" || true
+    #fi
+    if [ $progress -gt 0 -a -e /proc/progress ]; then
+        echo $(($progress / 2)) > /proc/progress
+    elif [ $progress -gt 0 -a -e /proc/vfd ]; then
+        echo Loading $(($progress / 2)) % > /proc/vfd
+    elif [ $progress -gt 0 -a -e /usr/bin/displayvfd ]; then
+        displayvfd -s 18 -t "Booting $progress"
+    elif [ $progress -gt 0 -a -e /dev/mcu ]; then
+        echo $(($progress / 2)) > /dev/mcu
+    elif [ $progress -gt 0 -a -e /dev/dbox/oled0 ]; then
+        echo $(($progress / 2)) > /dev/dbox/oled0
+    elif [ $progress -gt 0 -a -e /dev/oled0 ]; then
+        echo $(($progress / 2)) > /dev/oled0
     fi
 }
 
