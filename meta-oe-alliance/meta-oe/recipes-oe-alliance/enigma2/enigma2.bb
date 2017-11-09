@@ -214,7 +214,6 @@ SRC_URI_append_azboxminime = " \
 SRC_URI_append_vuduo = " \
     file://duo_VFD.patch \
     "
-
 SRC_URI_append_wetekplay2 = " \
     ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://0001-have-64-bit-action-long-int-update.patch", "", d)} \
     "
@@ -228,7 +227,9 @@ SRC_URI_append_aarch64 = " \
 SRC_URI_append_openspa = " \
     file://skin_default.patch \
     "
-
+SRC_URI_append_opennfr = " \
+    file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
+    "
 S = "${WORKDIR}/git"
 
 FILES_${PN} += "${datadir}/keymaps"
