@@ -189,7 +189,9 @@ PKGV = "${IMAGE_VERSION}+git${GITPKGV}"
 
 SRC_URI = "${ENIGMA2_URI}"
 
-
+SRC_URI_append_opennfr = " \
+    file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
+    "
 S = "${WORKDIR}/git"
 
 FILES_${PN} += "${datadir}/keymaps"
