@@ -189,47 +189,7 @@ PKGV = "${IMAGE_VERSION}+git${GITPKGV}"
 
 SRC_URI = "${ENIGMA2_URI}"
 
-SRC_URI_append_azboxhd = " \
-    file://azboxe2.patch \
-    file://lcdchar.patch \
-    file://e2_pcr.patch \
-    file://add_more_timeout.patch \
-    file://pic_show.patch \
-    ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://azboxHDe2py.patch", "", d)} \
-    "
-SRC_URI_append_azboxme = " \
-    file://azboxe2.patch \
-    file://e2_pcr.patch \
-    file://add_more_timeout.patch \
-    file://pic_show.patch \
-    ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://azboxMEe2py.patch", "", d)} \
-    "
-SRC_URI_append_azboxminime = " \
-    file://azboxe2.patch \
-    file://e2_pcr.patch \
-    file://add_more_timeout.patch \
-    file://pic_show.patch \
-    ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://azboxMEe2py.patch", "", d)} \
-    "
-SRC_URI_append_vuduo = " \
-    file://duo_VFD.patch \
-    "
-SRC_URI_append_wetekplay2 = " \
-    ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://0001-have-64-bit-action-long-int-update.patch", "", d)} \
-    "
 
-SRC_URI_append_odroidc2 = " \
-    ${@bb.utils.contains("DISTRO_NAME", "openatv", "file://0001-have-64-bit-action-long-int-update.patch", "", d)} \
-    "
-SRC_URI_append_aarch64 = " \
-  ${@bb.utils.contains("DISTRO_NAME", "openvix", "file://0001-have-64-bit-action-long-int-update.patch", "", d)} \
-    "
-SRC_URI_append_openspa = " \
-    file://skin_default.patch \
-    "
-SRC_URI_append_opennfr = " \
-    file://tuxbox_fix_DVB_API_VERSION_check_for_gcc5.patch \
-    "
 S = "${WORKDIR}/git"
 
 FILES_${PN} += "${datadir}/keymaps"
