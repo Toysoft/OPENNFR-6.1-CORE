@@ -124,15 +124,6 @@ image_preprocess() {
 				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/unzip.tar.gz		
 			cd $curdir
 
-			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/nfr4xbm.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/fbclear.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/nfr4xbm.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/fbclear.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/lzo.so.tar.gz	
-			cd $curdir
-			
 	
     # Speedup boot by reducing the host key size. The time it takes grows
     # exponentially by key size, the default is 2k which takes several

@@ -9,7 +9,7 @@ SRCREV = "${AUTOREV}"
 
 SRC_URI = "file://*"
 
-FILES_${PN} = "/var* /usr/bin/* /usr/lib/python2.7/* /usr/lib/python2.7/site-packages/twisted/web/* /usr/emu/* /usr/keys/* /usr/share/enigma2/defaults/* /usr/share/enigma2/* /usr/share/enigma2/rc_models/ini4/* /usr/share/enigma2/rc_models/red2/* /usr/share/enigma2/po/de/LC_MESSAGES/* /usr/lib/enigma2/python/Components/Converter/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/* /usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/* /usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/* /usr/scripts"
+FILES_${PN} = "/var* /usr/bin/* /usr/lib/python2.7/* /usr/lib/python2.7/site-packages/twisted/web/* /usr/emu/* /usr/keys/* /usr/share/enigma2/defaults/* /usr/share/enigma2/* /usr/share/enigma2/rc_models/ini4/* /usr/share/enigma2/rc_models/red2/* /usr/share/enigma2/po/de/LC_MESSAGES/* /usr/lib/enigma2/python/Components/Converter/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/* /usr/scripts"
 S = "${WORKDIR}"
 
 do_install() {
@@ -24,19 +24,6 @@ do_install() {
     do
         install -m 755 ${f} ${D}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/${f}
     done
-
-    install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin
-    for f in nfr4xbm.tar.gz fbclear.tar.gz
-    do
-        install -m 755 ${f} ${D}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/bin/${f}
-    done
-
-    install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs
-    for f in lzo.so.tar.gz
-    do
-        install -m 755 ${f} ${D}/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot/ubi_reader/ubifs/${f}
-    done
-
 
     install -d ${D}/var
     for f in smbd.pid nmbd.pid

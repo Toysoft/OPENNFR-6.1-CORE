@@ -22,8 +22,7 @@ RDEPENDS_${PN} = "\
 	enigma2-plugin-extensions-customsubservices \
 	enigma2-plugin-extensions-infopanel \
 	enigma2-plugin-extensions-imdb \
-	enigma2-plugin-extensions-mediaportal \
-	enigma2-plugin-extensions-nfr4xboot \	
+	enigma2-plugin-extensions-mediaportal \	
     	enigma2-plugin-extensions-epgimport \
 	\
 	enigma2-plugin-systemplugins-fastscan \
