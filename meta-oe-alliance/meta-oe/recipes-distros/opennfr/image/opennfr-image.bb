@@ -102,7 +102,7 @@ image_preprocess() {
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz
-				else:
+				else
 					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz
@@ -124,7 +124,7 @@ image_preprocess() {
 			        	mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
 					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
 					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips	
-				else:
+				else
 					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
 				fi					
 			cd $curdir
