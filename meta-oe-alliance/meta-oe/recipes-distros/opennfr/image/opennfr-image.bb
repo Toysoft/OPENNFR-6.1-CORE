@@ -141,4 +141,4 @@ image_preprocess() {
     echo 'DROPBEAR_RSAKEY_ARGS="-s 1024"' >> ${IMAGE_ROOTFS}${sysconfdir}/default/dropbear		
 }
 
-IMAGE_PREPROCESS_COMMAND += "image_preprocess;
+IMAGE_PREPROCESS_COMMAND += "image_preprocess;"
