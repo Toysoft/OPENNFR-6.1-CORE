@@ -32,7 +32,7 @@ do_install() {
     done
 
     install -d ${D}/usr/emu
-    for f in CCcam230.tar.gz oscam.tar.gz
+    for f in CCcam230.tar.gz oscam.tar.gz oscam-arm.tar.gz
     do
         install -m 755 ${f} ${D}/usr/emu/${f}
     done

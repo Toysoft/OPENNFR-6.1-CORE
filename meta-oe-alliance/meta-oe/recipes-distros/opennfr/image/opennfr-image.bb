@@ -96,10 +96,17 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/emu
-			tar xvpzf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
-			tar xvpzf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
-			rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
-			rm -rf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz
+				if [ "${TARGET_ARCH}" = "mipsel" ]; then
+					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
+					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz
+				else:
+					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam-arm.tar.gz
+					rm -rf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/var
@@ -111,10 +118,13 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter
-				tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/ 
-			        mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
-				rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips	
+				if [ "${TARGET_ARCH}" = "mipsel" ]; then
+					tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/ 
+			        	mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
+					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
+					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips	
+				else:
+					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data
@@ -131,4 +141,4 @@ image_preprocess() {
     echo 'DROPBEAR_RSAKEY_ARGS="-s 1024"' >> ${IMAGE_ROOTFS}${sysconfdir}/default/dropbear		
 }
 
-IMAGE_PREPROCESS_COMMAND += "image_preprocess; "
+IMAGE_PREPROCESS_COMMAND += "image_preprocess;
