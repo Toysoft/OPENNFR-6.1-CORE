@@ -96,7 +96,7 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/emu
-				if [ "${TARGET_ARCH}" = "mipsel" ]; then
+				if [ "${{MACHINE_ARCH}}" = "mipsel" ]; then
 					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/CCcam230.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
 					tar xvpzf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz -C ${IMAGE_ROOTFS}/usr/emu/
 					rm -rf ${IMAGE_ROOTFS}/usr/emu/oscam.tar.gz
@@ -118,7 +118,7 @@ image_preprocess() {
 			cd $curdir
 
 			cd ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter
-				if [ "${TARGET_ARCH}" = "mipsel" ]; then
+				if [ "${{MACHINE_ARCH}}" = "mipsel" ]; then
 					tar xvpzf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz -C ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/ 
 			        	mv ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so
 					rm -rf ${IMAGE_ROOTFS}/usr/lib/enigma2/python/Components/Converter/bitratecalc.so-mips.tar.gz
