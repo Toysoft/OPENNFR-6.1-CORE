@@ -9,7 +9,7 @@ SRCREV = "${AUTOREV}"
 
 SRC_URI = "file://*"
 
-FILES_${PN} = "/var* /usr/bin/* /usr/lib/python2.7/* /usr/lib/python2.7/site-packages/twisted/web/* /usr/emu/* /usr/keys/* /usr/share/enigma2/defaults/* /usr/share/enigma2/* /usr/share/enigma2/rc_models/ini4/* /usr/share/enigma2/rc_models/red2/* /usr/share/enigma2/po/de/LC_MESSAGES/* /usr/lib/enigma2/python/Components/Converter/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/* /usr/scripts"
+FILES_${PN} = "/var* /usr/bin/* /usr/lib/python2.7/* /usr/lib/python2.7/site-packages/twisted/web/* /usr/emu/* /usr/keys/* /usr/share/enigma2/defaults/* /usr/share/enigma2/* /usr/share/enigma2/rc_models/ini4/* /usr/share/enigma2/rc_models/red2/* /usr/share/enigma2/po/de/LC_MESSAGES/* /usr/lib/enigma2/python/Components/Converter/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/data/* /usr/lib/enigma2/python/Plugins/Extensions/Infopanel/* /usr/scripts/*"
 S = "${WORKDIR}"
 
 do_install() {
@@ -35,6 +35,12 @@ do_install() {
     for f in CCcam230.tar.gz oscam.tar.gz oscam-arm.tar.gz
     do
         install -m 755 ${f} ${D}/usr/emu/${f}
+    done
+
+    install -d ${D}/usr/scripts
+    for f in feed_install devfeed_install
+    do
+        install -m 755 ${f} ${D}/usr/scripts/${f}
     done
 
     install -d ${D}/usr/keys
