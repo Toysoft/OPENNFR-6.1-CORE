@@ -32,7 +32,7 @@ do_install() {
     done
 
     install -d ${D}/etc/opkg
-    for f in secret-feed.conf
+    for f in secret-feed.conf secret-feed-arm.conf
     do
         install -m 644 ${f} ${D}/etc/opkg/${f}
     done
