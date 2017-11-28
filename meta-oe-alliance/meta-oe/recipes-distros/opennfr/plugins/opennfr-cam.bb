@@ -38,7 +38,7 @@ do_install() {
     done
 
     install -d ${D}/usr/scripts
-    for f in feed_install devfeed_install
+    for f in feed_install.sh devfeed_install.sh
     do
         install -m 755 ${f} ${D}/usr/scripts/${f}
     done
