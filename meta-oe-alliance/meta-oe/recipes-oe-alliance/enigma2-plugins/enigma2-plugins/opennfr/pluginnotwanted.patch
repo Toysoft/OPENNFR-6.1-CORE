@@ -1,9 +1,11 @@
+diff --git a/Makefile.am b/Makefile.am
+index b9687fc..a30c8b3 100644
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -127,7 +127,6 @@
- SUBDIRS += \
+@@ -131,7 +131,6 @@
  	mytube \
  	yttrailer \
+ 	webinterface \
 -	menusort \
  	pluginhider \
  	pluginsort 
