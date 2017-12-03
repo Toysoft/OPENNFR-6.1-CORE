@@ -138,10 +138,10 @@ image_preprocess() {
 
 			cd ${IMAGE_ROOTFS}/etc/opkg
 				if [ "${TARGET_ARCH}" = "mipsel" ]; then
-					rm -rf ${IMAGE_ROOTFS}/usr/opkg/secret-feed-arm.conf
+					rm -rf ${IMAGE_ROOTFS}/etc/opkg/secret-feed-arm.conf
 				else
-					rm -rf ${IMAGE_ROOTFS}/usr/opkg/secret-feed.conf
-					mv ${IMAGE_ROOTFS}/usr/opkg/secret-feed-arm.conf ${IMAGE_ROOTFS}/usr/opkg/secret-feed.conf 				
+					rm -rf ${IMAGE_ROOTFS}/etc/opkg/secret-feed.conf
+					mv ${IMAGE_ROOTFS}/etc/opkg/secret-feed-arm.conf ${IMAGE_ROOTFS}/etc/opkg/secret-feed.conf 				
 				fi
 			cd $curdir
 	
