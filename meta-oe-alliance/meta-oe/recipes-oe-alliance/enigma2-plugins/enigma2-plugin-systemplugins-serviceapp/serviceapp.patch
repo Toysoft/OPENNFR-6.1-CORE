@@ -1,5 +1,6 @@
---- /home/harry/Downloads/plugin-org.py
-+++ /home/harry/Downloads/plugin.py
+diff --git a/src/plugin/plugin.py b/src/plugin/plugin.py
+--- a/src/plugin/plugin.py
++++ b/src/plugin/plugin.py
 @@ -152,6 +152,8 @@
          Screen.__init__(self, session)
          self.skinName = ["ServiceAppSettings", "Setup"]
