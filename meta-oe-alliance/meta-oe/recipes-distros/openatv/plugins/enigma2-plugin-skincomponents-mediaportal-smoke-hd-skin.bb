@@ -1,5 +1,5 @@
-SUMMARY = "HD Skinpart for Mediaportal Metrix Style"
-MAINTAINER = "nettraxx"
+SUMMARY = "HD Skinpart for Mediaportal on OpenATV Images by stein17"
+MAINTAINER = "stein17"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "proprietary"
@@ -14,9 +14,9 @@ PKGV = "1.0+git${GITPKGV}"
 VER ="1.0"
 PR = "r1"
 
-SRC_URI="git://github.com/pixbox-hdf/MediaPortalSkins.git"
+SRC_URI="git://github.com/stein17/Mediaportal-Smoke-HD-Skin.git"
 
-S = "${WORKDIR}/git/MetrixHD"
+S = "${WORKDIR}/git"
 
 FILES_${PN} = "/usr/*"
 
